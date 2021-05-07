@@ -82,10 +82,11 @@ function spellCheckBinary(){
 function aliceCheckLinear(){
     let whoopsCounter = 0;
     startTime = performance.now();
-    for (i=0; i<aliceWords.length; i++){
-        if (linearSearch(dictionary, aliceWords[i]) == "-1"){
+    for (i=0; i<aliceWordsLower.length; i++){
+        let aliceWordsLower = aliceWords[i].toLowerCase();
+        if (linearSearch(dictionary, aliceWordsLower[i]) == "-1"){
             whoopsCounter++;
-            console.log(aliceWords[i]);
+            console.log(aliceWordsLower);
         }
     }
     endTime = performance.now();
@@ -98,13 +99,13 @@ function aliceCheckBinary(){
     let whoopsCounter = 0;
     startTime = performance.now();
     for (i=0; i<aliceWords.length; i++){
-        if (binarySearch(dictionary, aliceWords[i]) == "-1"){
+        let aliceWordsLower = aliceWords[i].toLowerCase();
+        if (binarySearch(dictionary, aliceWordsLower) == "-1"){
             whoopsCounter++;
-            console.log(aliceWords[i]);
+            console.log(aliceWordsLower);
         }
     }
     endTime = performance.now();
-    //Display update
+    //Display updates
     document.getElementById("whoops-results").innerHTML = whoopsCounter;
     document.getElementById("time-results").innerHTML = (endTime-startTime);
-}
