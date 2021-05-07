@@ -82,9 +82,9 @@ function spellCheckBinary(){
 function aliceCheckLinear(){
     let whoopsCounter = 0;
     startTime = performance.now();
-    for (i=0; i<aliceWordsLower.length; i++){
+    for (i=0; i<aliceWords.length; i++){
         let aliceWordsLower = aliceWords[i].toLowerCase();
-        if (linearSearch(dictionary, aliceWordsLower[i]) == "-1"){
+        if (linearSearch(dictionary, aliceWordsLower) == "-1"){
             whoopsCounter++;
             console.log(aliceWordsLower);
         }
