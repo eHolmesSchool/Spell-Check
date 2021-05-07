@@ -109,3 +109,4 @@ function aliceCheckBinary(){
     //Display updates
     document.getElementById("whoops-results").innerHTML = whoopsCounter;
     document.getElementById("time-results").innerHTML = (endTime-startTime);
+}
